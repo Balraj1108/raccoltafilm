@@ -42,19 +42,7 @@ public class ExecuteSearchFilmServlet extends HttpServlet {
 				dataPubblicazioneParam, registaIdParam);
 
 		try {
-			// se la validazione non risulta ok
-			/*if (!UtilityForm.validateFilmBean(filmInstance)) {
-				request.setAttribute("insert_film_attr", filmInstance);
-				// questo mi serve per la select di registi in pagina
-				request.setAttribute("registi_list_attribute", filmService.listAllElements());
-				request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione");
-				request.getRequestDispatcher("/film/insert.jsp").forward(request, response);
-				return;
-			}*/
-
-			// se sono qui i valori sono ok quindi posso creare l'oggetto da inserire
-			// occupiamoci delle operazioni di business
-			//filmService.findByExample(filmInstance);
+			
 			request.setAttribute("film_list_attribute", filmService.findByExample(filmInstance));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -69,17 +57,6 @@ public class ExecuteSearchFilmServlet extends HttpServlet {
 		//response.sendRedirect("ExecuteListFilmServlet?operationResult=SUCCESS");
 		request.getRequestDispatcher("film/list.jsp").forward(request, response);
 		
-		/*Film example = new Film();
-
-		try {
-			request.setAttribute("film_list_attribute", filmService.findByExample(example));
-		} catch (Exception e) {
-			e.printStackTrace();
-			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/film/search.jsp").forward(request, response);
-			return;
-		}
-		request.getRequestDispatcher("/film/list.jsp").forward(request, response);*/
 	}
 
 }

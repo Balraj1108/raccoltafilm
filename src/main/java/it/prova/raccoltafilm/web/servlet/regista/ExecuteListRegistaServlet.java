@@ -33,7 +33,7 @@ public class ExecuteListRegistaServlet extends HttpServlet {
 			if (StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("SUCCESS"))
 				request.setAttribute("successMessage", "Operazione effettuata con successo");
 			else if (StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("NON_HA_FIGLI"))
-				request.setAttribute("errorMessage", "  HA FIGLI BASTARDO ");
+				request.setAttribute("errorMessage", "  Il regista presenta dei film collegati ");
 			
 
 			request.setAttribute("registi_list_attribute", registaService.listAllElements());
