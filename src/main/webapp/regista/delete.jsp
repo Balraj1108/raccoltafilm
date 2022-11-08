@@ -21,34 +21,34 @@
 			  
 			  		<div class='card'>
 					    <div class='card-header'>
-					        <h5>Visualizza dettaglio regista</h5>
+					        <h5>Visualizza  regista da Eliminare</h5>
 					    </div>
 					    
 					
 					    <div class='card-body'>
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Id:</dt>
-							  <dd class="col-sm-9">${show_regista_attr.id}</dd>
+							  <dd class="col-sm-9">${delete_regista_attr.id}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Nome:</dt>
-							  <dd class="col-sm-9">${show_regista_attr.nome}</dd>
+							  <dd class="col-sm-9">${delete_regista_attr.nome}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Cognome:</dt>
-							  <dd class="col-sm-9">${show_regista_attr.cognome}</dd>
+							  <dd class="col-sm-9">${delete_regista_attr.cognome}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Data Di Nascita:</dt>
-							  <dd class="col-sm-9"><fmt:formatDate type = "date" value = "${show_regista_attr.dataDiNascita}" /></dd>
+							  <dd class="col-sm-9"><fmt:formatDate type = "date" value = "${delete_regista_attr.dataDiNascita}" /></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">NickName:</dt>
-							  <dd class="col-sm-9">${show_regista_attr.nickName}</dd>
+							  <dd class="col-sm-9">${delete_regista_attr.nickName}</dd>
 					    	</dl>
 					    	
 					    	
@@ -64,19 +64,19 @@
 							  <div class="card card-body">
 							  	<dl class="row">
 								  <dt class="col-sm-3 text-right">Nome:</dt>
-								  <dd class="col-sm-9">${show_regista_attr.nome}</dd>
+								  <dd class="col-sm-9">${delete_regista_attr.nome}</dd>
 							   	</dl>
 							   	<dl class="row">
 								  <dt class="col-sm-3 text-right">Cognome:</dt>
-								  <dd class="col-sm-9">${show_regista_attr.cognome}</dd>
+								  <dd class="col-sm-9">${delete_regista_attr.cognome}</dd>
 							   	</dl>
 							   	<dl class="row">
 								  <dt class="col-sm-3 text-right">Nickname:</dt>
-								  <dd class="col-sm-9">${show_regista_attr.nickName}</dd>
+								  <dd class="col-sm-9">${delete_regista_attr.nickName}</dd>
 							   	</dl>
 							   	<dl class="row">
 								  <dt class="col-sm-3 text-right">Sesso:</dt>
-								  <dd class="col-sm-9">${show_regista_attr.sesso}</dd>
+								  <dd class="col-sm-9">${delete_regista_attr.sesso}</dd>
 							   	</dl>
 							    
 							  </div>
@@ -89,9 +89,13 @@
 					    </div>
 					    
 					    <div class='card-footer'>
-					        <a href="${pageContext.request.contextPath}/ExecuteListRegistaServlet" class='btn btn-outline-secondary' style='width:80px'>
-					            <i class='fa fa-chevron-left'></i> Back
-					        </a>
+					    	<form action="${pageContext.request.contextPath}/ExecuteDeleteRegistaServlet" method="post">
+					    		<input type="hidden" name="idRegista" value="${delete_regista_attr.id}">
+						    	<button type="submit" name="submit" id="submit" class="btn btn-danger">Conferma</button>
+						        <a href="${pageContext.request.contextPath}/ExecuteListRegistaServlet" class='btn btn-outline-secondary' style='width:80px'>
+						            <i class='fa fa-chevron-left'></i> Back
+						        </a>
+					        </form>
 					    </div>
 					<!-- end card -->
 					</div>	

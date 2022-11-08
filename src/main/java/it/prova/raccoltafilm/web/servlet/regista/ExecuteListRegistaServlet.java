@@ -32,6 +32,9 @@ public class ExecuteListRegistaServlet extends HttpServlet {
 			String operationResult = request.getParameter("operationResult");
 			if (StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("SUCCESS"))
 				request.setAttribute("successMessage", "Operazione effettuata con successo");
+			else if (StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("NON_HA_FIGLI"))
+				request.setAttribute("errorMessage", "  HA FIGLI BASTARDO ");
+			
 
 			request.setAttribute("registi_list_attribute", registaService.listAllElements());
 		} catch (Exception e) {
