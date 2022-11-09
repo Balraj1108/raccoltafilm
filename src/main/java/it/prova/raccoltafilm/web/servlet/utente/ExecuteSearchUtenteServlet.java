@@ -13,7 +13,7 @@ import it.prova.raccoltafilm.service.UtenteService;
 import it.prova.raccoltafilm.utility.UtilityForm;
 
 
-@WebServlet("/ExecuteSearchUtenteServlet")
+@WebServlet("/admin/ExecuteSearchUtenteServlet")
 public class ExecuteSearchUtenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,7 +30,7 @@ public class ExecuteSearchUtenteServlet extends HttpServlet {
 		String nomeParam = request.getParameter("nome");
 		String cognomeParam = request.getParameter("cognome");
 		String nickNameParam = request.getParameter("username");
-		String dataDiNascitaParam = request.getParameter("dataDiNascita");
+		String dataDiNascitaParam = request.getParameter("dateCreated");
 
 		
 		Utente example = new Utente(nickNameParam, nomeParam, cognomeParam,
