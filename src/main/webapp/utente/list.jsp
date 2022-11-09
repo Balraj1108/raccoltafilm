@@ -65,7 +65,7 @@
 											<td>${registaItem.username }</td>
 											<td><fmt:formatDate type = "date" value = "${registaItem.dateCreated }" /></td>
 											<td>
-												<a class="btn  btn-sm btn-outline-secondary" href="#">Visualizza</a>
+												<a class="btn  btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/admin/ExecuteShowUtenteServlet?idUtente=${registaItem.id}">Visualizza</a>
 												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="#">Edit</a>
 												<a class="btn btn-outline-danger btn-sm" href="#">Delete</a>
 											</td>

@@ -54,5 +54,10 @@ public class Ruolo {
 	public void setCodice(String codice) {
 		this.codice = codice;
 	}
+	
+	@Override
+	public String toString() {
+		return descrizione;
+	}
 
 }
